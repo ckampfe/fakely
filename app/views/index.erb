@@ -13,9 +13,9 @@
 
     <div id="url-list">
       <ul class="shortlinks">
-        <li><a href="">/8baac7</a></li>
-        <li><a href="">/44kdf2</a></li>
-        <li><a href="">/028jjj</a></li>
+        <% @urls.each do |u| %>
+          <li><a href="<%= u.short_url %>"><%= u.short_url[/\/.+\z/] %></a></li>
+        <% end %>
       </ul>
     </div>
 
