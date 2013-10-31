@@ -2,7 +2,7 @@
   margin: 0 auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px solid white;
 }
 
 .submit-bar {
@@ -11,6 +11,9 @@
   width: 590px;
   padding: 5px;
   background-color: #9BCD9B;
+  -moz-box-shadow: 2px 2px 2px #888;
+  -webkit-box-shadow: 10px 10px 5px #888;
+  box-shadow: 2px 2px 30px #888;
 }
 
 .submit-bar form {
@@ -43,9 +46,10 @@
   list-style: none;
   padding-bottom: 5px;
   font-size: 2em;
+  color: white;
 }
 
 .shortlinks li a {
-  color: white;
   padding: 3px 0;
+  color: white;
 }

@@ -1,3 +1,4 @@
+require 'json'
 
 get '/' do
   @urls = Url.all
@@ -7,14 +8,12 @@ end
 post '/urls' do
 
   # helper method
-  short_url = rand_ident
-
   u = Url.create(:long_url    => params[:long_url],
-                 :short_url   => "/#{short_url}",
+                 :short_url   => "#{rand_ident}",
                  :click_count => 0)
-  
+
   if request.xhr?
-    { :url => u } #:layout => false
+    u.to_json; set :layout => false
   else
     @urls = Url.all
     erb :index
@@ -22,7 +21,13 @@ post '/urls' do
 end
 
 get '/:short_url' do
+  u = Url.find_by_short_url(params[:short_url])
+  u.click_count += 1
+  u.save
 
-  # redirect to appropriate long url  
-
+  if u.long_url.include? "http"
+    redirect to "#{u.long_url}"
+  else
+    redirect to "http://#{u.long_url}"
+  end
 end

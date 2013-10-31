@@ -1,7 +1,28 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $( "form" ).on( "submit", function( event ) {
+
+    event.preventDefault();
+
+    var url = $( this ).attr( "action" );
+
+    // send as object
+    var data = { "long_url": $( this['url'] ).val() };
+
+    // post request
+    $.post( url, data, function( response ) {
+
+      // parse from json
+      parsedResponse = eval('(' + response + ')');
+
+      var short_url = parsedResponse.url.short_url;
+
+      var click_count = parsedResponse.url.click_count;
+
+      // DOM insertion
+      $( <li><a href=short_url>short_url</a> click_count </li> ).prependTo( ".shortlinks" );
+
+    });
+  });
+  // click update 
 });
