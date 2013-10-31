@@ -1,5 +1,6 @@
 
 get '/' do
+  @urls = Url.all
   erb :index
 end
 
