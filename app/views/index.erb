@@ -13,8 +13,8 @@
 
     <div id="url-list">
       <ul class="shortlinks">
-        <% @urls.each do |u| %>
-          <li><a href="<%= u.short_url %>">/<%= u.short_url %></a></li>
+        <% @urls.reverse.each do |u| %>
+          <li><a href="<%= u.short_url %>">/<%= u.short_url %></a>&nbsp&nbsp<%= u.click_count %></li>
         <% end %>
       </ul>
     </div>
