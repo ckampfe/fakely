@@ -20,7 +20,7 @@ $(document).ready(function() {
       var click_count = parsedResponse.url.click_count;
 
       // DOM insertion
-      $( <li><a href=short_url>short_url</a> click_count </li> ).prependTo( ".shortlinks" );
+      $( "<li><a href=" + short_url + ">" + short_url + "</a>" + "   " + click_count + "</li>" ).prependTo( ".shortlinks" );
 
     });
   });

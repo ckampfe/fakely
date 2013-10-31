@@ -13,7 +13,8 @@ post '/urls' do
                  :click_count => 0)
 
   if request.xhr?
-    u.to_json; set :layout => false
+    set :layout => false # ????
+    u.to_json
   else
     @urls = Url.all
     erb :index
