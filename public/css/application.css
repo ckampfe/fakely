@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+.submit-bar {
+  position: fixed;
+  margin: 0 auto 15px;
+  width: 590px;
+  padding: 5px;
+  background-color: #9BCD9B;
+}
+
+.submit-bar form {
+  width: auto;
+  display: inline;
+}
+
+.submit-bar button {
+  padding: 3px;
+}
+
+.submit-bar #result {
+  width: auto;
+  float: right;
+  color: white;
+  vertical-align: center;
+  line-height: 24px;
+  font: sans-serif;
+  font-size: 1.4em;
+  padding: 0 1em 0 0;
+}
+
+#url-list {
+  margin: 10% auto;
+  background-color: #9BCD9B;
+  padding: 15px;
+}
+
+.shortlinks li {
+  list-style: none;
+  padding-bottom: 5px;
+  font-size: 2em;
+}
+
+.shortlinks li a {
+  color: white;
+  padding: 3px 0;
+}
